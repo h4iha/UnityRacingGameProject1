@@ -5,15 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - AI
-  - CarPos
   - waypoint
-  - checkpoint
-  - RedScore
-  - BlueScore
-  - GreenScore
-  - HalfLapTrig
-  - LapCompleteTrig
-  - AIBody
+  - Progress
   layers:
   - Default
   - TransparentFX
