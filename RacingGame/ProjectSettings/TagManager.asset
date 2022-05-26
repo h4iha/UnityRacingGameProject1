@@ -5,18 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - AI
-  - waypoint
-  - Progress
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - AI
   - Water
   - UI
-  - carbody
-  - checkpoint
-  - 
+  - Player
+  - Path
+  - Checkpoints
   - 
   - 
   - 

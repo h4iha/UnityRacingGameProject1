@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-#pragma warning disable 649
 namespace UnityStandardAssets.Vehicles.Car
 {
     [RequireComponent(typeof (CarController))]
@@ -35,6 +34,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_AccelWanderSpeed = 0.1f;                                 // how fast the cars acceleration wandering will fluctuate
         [SerializeField] private BrakeCondition m_BrakeCondition = BrakeCondition.TargetDistance; // what should the AI consider when accelerating/braking?
         [SerializeField] private bool m_Driving;                                                  // whether the AI is currently actively driving or stopped.
+        private GameObject TargetGameObject;
         [SerializeField] private Transform m_Target;                                              // 'target' the target object to aim for.
         [SerializeField] private bool m_StopWhenTargetReached;                                    // should we stop driving when we reach the target?
         [SerializeField] private float m_ReachTargetThreshold = 2;                                // proximity to target to consider we 'reached' it, and stop driving.
@@ -56,6 +56,15 @@ namespace UnityStandardAssets.Vehicles.Car
             m_RandomPerlin = Random.value*100;
 
             m_Rigidbody = GetComponent<Rigidbody>();
+
+            if (gameObject.name.Length == 6)//one-digit number AI car has 6 characters (for example: AICar2)
+            {
+                TargetGameObject = GameObject.Find("TrackerAICar" + gameObject.name.Substring(gameObject.name.Length - 1));
+            }
+            if (gameObject.name.Length == 7)//two-digit number AI car has 7 characters (for example: AICar14)
+            {
+                TargetGameObject = GameObject.Find("TrackerAICar" + gameObject.name.Substring(gameObject.name.Length - 2));
+            }
         }
 
 
