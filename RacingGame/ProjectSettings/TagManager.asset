@@ -5,7 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - AI
-  - CheckPoint
+  - Lap
+  - checkpoint
+  - MissedText
+  - CarBody
+  - AIWhite
+  - AIYellow
+  - wheelAudio
+  - AICar1
+  - AICar2
+  - cube
+  - CP
   layers:
   - Default
   - TransparentFX
@@ -18,9 +28,9 @@ TagManager:
   - Checkpoints
   - 
   - 
-  - 
-  - 
-  - 
+  - Car1
+  - Car2
+  - Car3
   - 
   - 
   - 

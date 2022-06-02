@@ -6,33 +6,31 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class CountDown : MonoBehaviour
 {
-    [HideInInspector]
-    GameObject Player;
-    [HideInInspector]
-    GameObject AIcar1;
-    [HideInInspector]
-    GameObject AIcar2;
-    [HideInInspector]
-    GameObject AIcar3;
-    public GameObject CountdownUI;
+    public GameObject Player;
+    public GameObject AIWhite;
+    public GameObject AIYellow;
+    public GameObject UI1;
+    public GameObject UI2;
+    public GameObject UI3;
+    public GameObject UIGO;
+
     public AudioSource audioCount1;
     public AudioSource audioCount2;
     public AudioSource audioCount3;
     public AudioSource audioGo;
     public AudioSource audioSongTheme1;
-    public AudioSource audioSongTheme2;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        AIcar1 = GameObject.FindGameObjectWithTag("AIcar1");
-        AIcar2 = GameObject.FindGameObjectWithTag("AIcar2");
-        AIcar3 = GameObject.FindGameObjectWithTag("AIcar3");
-
-        CountdownUI.SetActive(false);
-
+        UI1.SetActive(false);
+        UI2.SetActive(false);
+        UI3.SetActive(false);
+        UIGO.SetActive(false);
+        StopCar(Player);
+        StopCar(AIWhite);
+        StopCar(AIYellow);
         StartCoroutine(CountStart());
     }
 
@@ -46,40 +44,58 @@ public class CountDown : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        CountdownUI.GetComponent<Text>().text = "3";
-        CountdownUI.SetActive(true);
+        UI3.SetActive(true);
         audioCount3.Play();
-        CountdownUI.SetActive(false);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
+        UI3.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
 
-        CountdownUI.GetComponent<Text>().text = "2";
-        CountdownUI.SetActive(true);
+        UI2.SetActive(true);
         audioCount2.Play();
-        CountdownUI.SetActive(false);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
+        UI2.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
 
-        CountdownUI.GetComponent<Text>().text = "1";
-        CountdownUI.SetActive(true);
+        UI1.SetActive(true);
         audioCount1.Play();
-        CountdownUI.SetActive(false);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
+        UI1.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
 
-        CountdownUI.GetComponent<Text>().text = "GO";
-        CountdownUI.SetActive(true);
+        UIGO.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         audioGo.Play();
-        CountdownUI.SetActive(false);
+        UIGO.SetActive(false);
 
         audioSongTheme1.Play();
 
-        Player.GetComponent<CarController>().enabled = true;
-        Player.GetComponent<CarUserControl>().enabled = true;
-        Player.GetComponent<Rigidbody>().isKinematic = false;
-        /*
-        AIcar1.GetComponent<CarAIControl>().enabled = true;
-        AIcar1.GetComponent<CarController>().enabled = true;
-        AIcar2.GetComponent<CarAIControl>().enabled = true;
-        AIcar2.GetComponent<CarController>().enabled = true;
-        AIcar3.GetComponent<CarAIControl>().enabled = true;
-        AIcar3.GetComponent<CarController>().enabled = true;*/
+        StartCar(Player);
+        StartCar(AIWhite);
+        StartCar(AIYellow);
+    }
+
+    public void StartCar(GameObject car)
+    {
+        car.GetComponent<CarController>().enabled = true;
+
+        if (car.GetComponent<CarUserControl>() != null)
+            car.GetComponent<CarUserControl>().enabled = true;
+
+        if (car.GetComponent<CarAIControl>() != null)
+            car.GetComponent<CarAIControl>().enabled = true;
+
+        car.GetComponent<Rigidbody>().isKinematic = false;
+    }
+    public void StopCar(GameObject car)
+    {
+        car.GetComponent<CarController>().enabled = false;
+
+        if (car.GetComponent<CarUserControl>() != null)
+            car.GetComponent<CarUserControl>().enabled = false;
+
+        if (car.GetComponent<CarAIControl>() != null)
+            car.GetComponent<CarAIControl>().enabled = false;
+
+        car.GetComponent<Rigidbody>().isKinematic = true;
     }
 }
