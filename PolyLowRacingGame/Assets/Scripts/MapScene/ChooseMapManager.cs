@@ -9,16 +9,17 @@ public class ChooseMapManager : MonoBehaviour
     public int totalMap;
     public int currentMap;
     public int currentMode;
-    public int currentLap;
+    public int currentTotalLap;
 
     public Text nameMapCurentText;
     public Text totalMoneyText;
     public Text priceMapCurrentText;
-    public Text currentLapText;
+    public Text currentTotalLapText;
     public Text currentModeText;
 
     public Button startButton;
     public Button buyButton;
+    public Button changeLapButton;
 
     [Header("Map Attributes")]
     [SerializeField] private string[] mapNames;
@@ -36,12 +37,22 @@ public class ChooseMapManager : MonoBehaviour
         totalMoneyText.text = SaveManager.instance.totalMoney.ToString();
         currentMap = SaveManager.instance.currentMap;
         currentMode = SaveManager.instance.currentMode;
+        SaveManager.instance.currentTotalLap = 1;
 
-        currentLapText.text = currentLap.ToString();
+        currentTotalLapText.text = "1";
 
-        if (currentMode == 0) currentModeText.text = "Time";
-        if (currentMode == 1) currentModeText.text = "Race";
-        if (currentMode == 2) currentModeText.text = "Score";
+        if (currentMode == 0) { 
+            currentModeText.text = "Race";
+            changeLapButton.gameObject.SetActive(true);
+        }
+        if (currentMode == 1) {
+            currentModeText.text = "Time";
+            changeLapButton.gameObject.SetActive(false);
+        }
+        if (currentMode == 2) {
+            currentModeText.text = "Score";
+            changeLapButton.gameObject.SetActive(false);
+        }
         SelectMap(currentMap);
     }
 
@@ -123,12 +134,12 @@ public class ChooseMapManager : MonoBehaviour
     }
 
     public void ChangeLap() {
-        currentLap += 1;
-        if (currentLap > 3) currentLap = 1;
+        currentTotalLap += 1;
+        if (currentTotalLap > 3) currentTotalLap = 1;
 
-        currentLapText.text = currentLap.ToString();
+        currentTotalLapText.text = currentTotalLap.ToString();
 
-        SaveManager.instance.currentLap = currentLap;
+        SaveManager.instance.currentTotalLap = currentTotalLap;
         SaveManager.instance.Save();
     }
 
@@ -136,11 +147,30 @@ public class ChooseMapManager : MonoBehaviour
         currentMode += 1;
         if (currentMode > 2) currentMode = 0;
 
-        if (currentMode == 0) currentModeText.text = "Time";
-        if (currentMode == 1) currentModeText.text = "Race";
-        if (currentMode == 2) currentModeText.text = "Score";
+        if (currentMode == 0) { 
+            currentModeText.text = "Race";
+            changeLapButton.gameObject.SetActive(true);
+            SaveManager.instance.currentTotalLap = 1;
+            SaveManager.instance.Save();
+            currentTotalLapText.text = "1";
+        }
+        if (currentMode == 1) {
+            currentModeText.text = "Time";
+            changeLapButton.gameObject.SetActive(false);
+            SaveManager.instance.currentTotalLap = 1;
+            SaveManager.instance.Save();
+            currentTotalLapText.text = "1";
+        }
+        if (currentMode == 2) {
+            currentModeText.text = "Score";
+            changeLapButton.gameObject.SetActive(false);
+            SaveManager.instance.currentTotalLap = 1;
+            SaveManager.instance.Save();
+            currentTotalLapText.text = "1";
+        }
 
         SaveManager.instance.currentMode = currentMode;
         SaveManager.instance.Save();
+
     }
 }

@@ -6165,8 +6165,16 @@ MonoBehaviour:
   carsUnlocked: 010000
   currentMap: 0
   currentMode: 0
-  currentLap: 0
+  currentTotalLap: 0
   mapsUnlocked: 0100
+  BestMinM1: 59
+  BestSecM1: 59
+  RaceMinM1: 59
+  RaceSecM1: 59
+  BestMinM2: 59
+  BestSecM2: 59
+  RaceMinM2: 59
+  RaceSecM2: 59
 --- !u!1 &1616783694
 GameObject:
   m_ObjectHideFlags: 0
@@ -8875,7 +8883,7 @@ MonoBehaviour:
   m_ReverseTorque: 500
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
-  m_SpeedType: 0
+  m_SpeedType: 1
   m_Topspeed: 150
   NoOfGears: 5
   m_RevRangeBoundary: 1

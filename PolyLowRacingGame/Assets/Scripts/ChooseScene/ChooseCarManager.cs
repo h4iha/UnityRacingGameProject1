@@ -60,6 +60,7 @@ public class ChooseCarManager : MonoBehaviour
         currentCar = SaveManager.instance.currentCar;
         currentColor = SaveManager.instance.currentColor;
         SelectCar(currentCar);
+        SelectColor(currentColor);
     }
 
     // Update is called once per frame
@@ -158,156 +159,178 @@ public class ChooseCarManager : MonoBehaviour
         SaveManager.instance.currentColor = currentColor;
         SaveManager.instance.Save();
         
-        MazdaRed.gameObject.SetActive(true);
-        MazdaYellow.gameObject.SetActive(false);
-        MazdaGreen.gameObject.SetActive(false);
-        MazdaBlue.gameObject.SetActive(false);
-        MazdaBlack.gameObject.SetActive(false);
-        MazdaOrange.gameObject.SetActive(false);
-
-        PeugeotRed.gameObject.SetActive(true);
-        PeugeotYellow.gameObject.SetActive(false);
-        PeugeotGreen.gameObject.SetActive(false);
-        PeugeotBlue.gameObject.SetActive(false);
-        PeugeotBlack.gameObject.SetActive(false);
-        PeugeotOrange.gameObject.SetActive(false);
-
-        ChevroletRed.gameObject.SetActive(true);
-        ChevroletYellow.gameObject.SetActive(false);
-        ChevroletGreen.gameObject.SetActive(false);
-        ChevroletBlue.gameObject.SetActive(false);
-        ChevroletBlack.gameObject.SetActive(false);
-        ChevroletOrange.gameObject.SetActive(false);
+        SelectColor(currentColor);
     }
     public void ColorYellow() {
         currentColor = 1;
         SaveManager.instance.currentColor = currentColor;
         SaveManager.instance.Save();
 
-        MazdaRed.gameObject.SetActive(false);
-        MazdaYellow.gameObject.SetActive(true);
-        MazdaGreen.gameObject.SetActive(false);
-        MazdaBlue.gameObject.SetActive(false);
-        MazdaBlack.gameObject.SetActive(false);
-        MazdaOrange.gameObject.SetActive(false);
-
-        PeugeotRed.gameObject.SetActive(false);
-        PeugeotYellow.gameObject.SetActive(true);
-        PeugeotGreen.gameObject.SetActive(false);
-        PeugeotBlue.gameObject.SetActive(false);
-        PeugeotBlack.gameObject.SetActive(false);
-        PeugeotOrange.gameObject.SetActive(false);
-
-        ChevroletRed.gameObject.SetActive(false);
-        ChevroletYellow.gameObject.SetActive(true);
-        ChevroletGreen.gameObject.SetActive(false);
-        ChevroletBlue.gameObject.SetActive(false);
-        ChevroletBlack.gameObject.SetActive(false);
-        ChevroletOrange.gameObject.SetActive(false);
+        SelectColor(currentColor);
     }
     public void ColorGreen() {
         currentColor = 2;
         SaveManager.instance.currentColor = currentColor;
         SaveManager.instance.Save();
         
-        MazdaRed.gameObject.SetActive(false);
-        MazdaYellow.gameObject.SetActive(false);
-        MazdaGreen.gameObject.SetActive(true);
-        MazdaBlue.gameObject.SetActive(false);
-        MazdaBlack.gameObject.SetActive(false);
-        MazdaOrange.gameObject.SetActive(false);
-
-        PeugeotRed.gameObject.SetActive(false);
-        PeugeotYellow.gameObject.SetActive(false);
-        PeugeotGreen.gameObject.SetActive(true);
-        PeugeotBlue.gameObject.SetActive(false);
-        PeugeotBlack.gameObject.SetActive(false);
-        PeugeotOrange.gameObject.SetActive(false);
-
-        ChevroletRed.gameObject.SetActive(false);
-        ChevroletYellow.gameObject.SetActive(false);
-        ChevroletGreen.gameObject.SetActive(true);
-        ChevroletBlue.gameObject.SetActive(false);
-        ChevroletBlack.gameObject.SetActive(false);
-        ChevroletOrange.gameObject.SetActive(false);
+        SelectColor(currentColor);
     }
     public void ColorBlue() {
         currentColor = 3;
         SaveManager.instance.currentColor = currentColor;
         SaveManager.instance.Save();
 
-        MazdaRed.gameObject.SetActive(false);
-        MazdaYellow.gameObject.SetActive(false);
-        MazdaGreen.gameObject.SetActive(false);
-        MazdaBlue.gameObject.SetActive(true);
-        MazdaBlack.gameObject.SetActive(false);
-        MazdaOrange.gameObject.SetActive(false);
-
-        PeugeotRed.gameObject.SetActive(false);
-        PeugeotYellow.gameObject.SetActive(false);
-        PeugeotGreen.gameObject.SetActive(false);
-        PeugeotBlue.gameObject.SetActive(true);
-        PeugeotBlack.gameObject.SetActive(false);
-        PeugeotOrange.gameObject.SetActive(false);
-
-        ChevroletRed.gameObject.SetActive(false);
-        ChevroletYellow.gameObject.SetActive(false);
-        ChevroletGreen.gameObject.SetActive(false);
-        ChevroletBlue.gameObject.SetActive(true);
-        ChevroletBlack.gameObject.SetActive(false);
-        ChevroletOrange.gameObject.SetActive(false);
+        SelectColor(currentColor);
     }
     public void ColorBlack() {
         currentColor = 4;
         SaveManager.instance.currentColor = currentColor;
         SaveManager.instance.Save();
 
-        MazdaRed.gameObject.SetActive(false);
-        MazdaYellow.gameObject.SetActive(false);
-        MazdaGreen.gameObject.SetActive(false);
-        MazdaBlue.gameObject.SetActive(false);
-        MazdaBlack.gameObject.SetActive(true);
-        MazdaOrange.gameObject.SetActive(false);
-
-        PeugeotRed.gameObject.SetActive(false);
-        PeugeotYellow.gameObject.SetActive(false);
-        PeugeotGreen.gameObject.SetActive(false);
-        PeugeotBlue.gameObject.SetActive(false);
-        PeugeotBlack.gameObject.SetActive(true);
-        PeugeotOrange.gameObject.SetActive(false);
-
-        ChevroletRed.gameObject.SetActive(false);
-        ChevroletYellow.gameObject.SetActive(false);
-        ChevroletGreen.gameObject.SetActive(false);
-        ChevroletBlue.gameObject.SetActive(false);
-        ChevroletBlack.gameObject.SetActive(true);
-        ChevroletOrange.gameObject.SetActive(false);
+        SelectColor(currentColor);
     }
     public void ColorOrange() {
         currentColor = 5;
         SaveManager.instance.currentColor = currentColor;
         SaveManager.instance.Save();
 
-        MazdaRed.gameObject.SetActive(false);
-        MazdaYellow.gameObject.SetActive(false);
-        MazdaGreen.gameObject.SetActive(false);
-        MazdaBlue.gameObject.SetActive(false);
-        MazdaBlack.gameObject.SetActive(false);
-        MazdaOrange.gameObject.SetActive(true);
-
-        PeugeotRed.gameObject.SetActive(false);
-        PeugeotYellow.gameObject.SetActive(false);
-        PeugeotGreen.gameObject.SetActive(false);
-        PeugeotBlue.gameObject.SetActive(false);
-        PeugeotBlack.gameObject.SetActive(false);
-        PeugeotOrange.gameObject.SetActive(true);
-
-        ChevroletRed.gameObject.SetActive(false);
-        ChevroletYellow.gameObject.SetActive(false);
-        ChevroletGreen.gameObject.SetActive(false);
-        ChevroletBlue.gameObject.SetActive(false);
-        ChevroletBlack.gameObject.SetActive(false);
-        ChevroletOrange.gameObject.SetActive(true);
+        SelectColor(currentColor);
     }
     #endregion
+
+    private void SelectColor(int _index) {
+
+        if(_index == 0) {
+            MazdaRed.gameObject.SetActive(true);
+            MazdaYellow.gameObject.SetActive(false);
+            MazdaGreen.gameObject.SetActive(false);
+            MazdaBlue.gameObject.SetActive(false);
+            MazdaBlack.gameObject.SetActive(false);
+            MazdaOrange.gameObject.SetActive(false);
+
+            PeugeotRed.gameObject.SetActive(true);
+            PeugeotYellow.gameObject.SetActive(false);
+            PeugeotGreen.gameObject.SetActive(false);
+            PeugeotBlue.gameObject.SetActive(false);
+            PeugeotBlack.gameObject.SetActive(false);
+            PeugeotOrange.gameObject.SetActive(false);
+
+            ChevroletRed.gameObject.SetActive(true);
+            ChevroletYellow.gameObject.SetActive(false);
+            ChevroletGreen.gameObject.SetActive(false);
+            ChevroletBlue.gameObject.SetActive(false);
+            ChevroletBlack.gameObject.SetActive(false);
+            ChevroletOrange.gameObject.SetActive(false);
+        }
+        else if(_index == 1) {
+            MazdaRed.gameObject.SetActive(false);
+            MazdaYellow.gameObject.SetActive(true);
+            MazdaGreen.gameObject.SetActive(false);
+            MazdaBlue.gameObject.SetActive(false);
+            MazdaBlack.gameObject.SetActive(false);
+            MazdaOrange.gameObject.SetActive(false);
+
+            PeugeotRed.gameObject.SetActive(false);
+            PeugeotYellow.gameObject.SetActive(true);
+            PeugeotGreen.gameObject.SetActive(false);
+            PeugeotBlue.gameObject.SetActive(false);
+            PeugeotBlack.gameObject.SetActive(false);
+            PeugeotOrange.gameObject.SetActive(false);
+
+            ChevroletRed.gameObject.SetActive(false);
+            ChevroletYellow.gameObject.SetActive(true);
+            ChevroletGreen.gameObject.SetActive(false);
+            ChevroletBlue.gameObject.SetActive(false);
+            ChevroletBlack.gameObject.SetActive(false);
+            ChevroletOrange.gameObject.SetActive(false);
+        }
+        else if(_index == 2) {
+            MazdaRed.gameObject.SetActive(false);
+            MazdaYellow.gameObject.SetActive(false);
+            MazdaGreen.gameObject.SetActive(true);
+            MazdaBlue.gameObject.SetActive(false);
+            MazdaBlack.gameObject.SetActive(false);
+            MazdaOrange.gameObject.SetActive(false);
+
+            PeugeotRed.gameObject.SetActive(false);
+            PeugeotYellow.gameObject.SetActive(false);
+            PeugeotGreen.gameObject.SetActive(true);
+            PeugeotBlue.gameObject.SetActive(false);
+            PeugeotBlack.gameObject.SetActive(false);
+            PeugeotOrange.gameObject.SetActive(false);
+
+            ChevroletRed.gameObject.SetActive(false);
+            ChevroletYellow.gameObject.SetActive(false);
+            ChevroletGreen.gameObject.SetActive(true);
+            ChevroletBlue.gameObject.SetActive(false);
+            ChevroletBlack.gameObject.SetActive(false);
+            ChevroletOrange.gameObject.SetActive(false);
+        }
+        else if(_index == 3) {
+            MazdaRed.gameObject.SetActive(false);
+            MazdaYellow.gameObject.SetActive(false);
+            MazdaGreen.gameObject.SetActive(false);
+            MazdaBlue.gameObject.SetActive(true);
+            MazdaBlack.gameObject.SetActive(false);
+            MazdaOrange.gameObject.SetActive(false);
+
+            PeugeotRed.gameObject.SetActive(false);
+            PeugeotYellow.gameObject.SetActive(false);
+            PeugeotGreen.gameObject.SetActive(false);
+            PeugeotBlue.gameObject.SetActive(true);
+            PeugeotBlack.gameObject.SetActive(false);
+            PeugeotOrange.gameObject.SetActive(false);
+
+            ChevroletRed.gameObject.SetActive(false);
+            ChevroletYellow.gameObject.SetActive(false);
+            ChevroletGreen.gameObject.SetActive(false);
+            ChevroletBlue.gameObject.SetActive(true);
+            ChevroletBlack.gameObject.SetActive(false);
+            ChevroletOrange.gameObject.SetActive(false);
+        }
+        else if(_index == 4) {
+            MazdaRed.gameObject.SetActive(false);
+            MazdaYellow.gameObject.SetActive(false);
+            MazdaGreen.gameObject.SetActive(false);
+            MazdaBlue.gameObject.SetActive(false);
+            MazdaBlack.gameObject.SetActive(true);
+            MazdaOrange.gameObject.SetActive(false);
+
+            PeugeotRed.gameObject.SetActive(false);
+            PeugeotYellow.gameObject.SetActive(false);
+            PeugeotGreen.gameObject.SetActive(false);
+            PeugeotBlue.gameObject.SetActive(false);
+            PeugeotBlack.gameObject.SetActive(true);
+            PeugeotOrange.gameObject.SetActive(false);
+
+            ChevroletRed.gameObject.SetActive(false);
+            ChevroletYellow.gameObject.SetActive(false);
+            ChevroletGreen.gameObject.SetActive(false);
+            ChevroletBlue.gameObject.SetActive(false);
+            ChevroletBlack.gameObject.SetActive(true);
+            ChevroletOrange.gameObject.SetActive(false);
+        }
+        else if(_index == 5) {
+            MazdaRed.gameObject.SetActive(false);
+            MazdaYellow.gameObject.SetActive(false);
+            MazdaGreen.gameObject.SetActive(false);
+            MazdaBlue.gameObject.SetActive(false);
+            MazdaBlack.gameObject.SetActive(false);
+            MazdaOrange.gameObject.SetActive(true);
+
+            PeugeotRed.gameObject.SetActive(false);
+            PeugeotYellow.gameObject.SetActive(false);
+            PeugeotGreen.gameObject.SetActive(false);
+            PeugeotBlue.gameObject.SetActive(false);
+            PeugeotBlack.gameObject.SetActive(false);
+            PeugeotOrange.gameObject.SetActive(true);
+
+            ChevroletRed.gameObject.SetActive(false);
+            ChevroletYellow.gameObject.SetActive(false);
+            ChevroletGreen.gameObject.SetActive(false);
+            ChevroletBlue.gameObject.SetActive(false);
+            ChevroletBlack.gameObject.SetActive(false);
+            ChevroletOrange.gameObject.SetActive(true);
+        }
+    }
 }

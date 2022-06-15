@@ -394,7 +394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: 65}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262431677
@@ -453,7 +453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &282912089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: 65}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435983776
@@ -860,14 +860,15 @@ MonoBehaviour:
   totalMap: 2
   currentMap: 0
   currentMode: 0
-  currentLap: 1
+  currentTotalLap: 0
   nameMapCurentText: {fileID: 1287186583}
   totalMoneyText: {fileID: 2053736640}
   priceMapCurrentText: {fileID: 1101863893}
-  currentLapText: {fileID: 1496538883}
+  currentTotalLapText: {fileID: 1496538883}
   currentModeText: {fileID: 32442746}
   startButton: {fileID: 1685289629}
   buyButton: {fileID: 1994523564}
+  changeLapButton: {fileID: 282912090}
   mapNames:
   - RIVER
   - MOUNTAIN
@@ -1059,8 +1060,8 @@ RectTransform:
   - {fileID: 1287186582}
   - {fileID: 435983775}
   - {fileID: 262431676}
-  - {fileID: 1217145100}
   - {fileID: 1395107705}
+  - {fileID: 1217145100}
   m_Father: {fileID: 1781142859}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1449,11 +1450,11 @@ RectTransform:
   - {fileID: 982573134}
   - {fileID: 375949860}
   m_Father: {fileID: 901104382}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217145101
@@ -1528,7 +1529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -55}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: -100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1287186583
@@ -1842,11 +1843,11 @@ RectTransform:
   - {fileID: 32442745}
   - {fileID: 318398365}
   m_Father: {fileID: 901104382}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: 146}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1395107706
