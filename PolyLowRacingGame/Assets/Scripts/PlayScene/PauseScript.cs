@@ -24,8 +24,4 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
     }
-
-    public void mainmenu() {
-        SceneManager.LoadScene("ChooseMapScene");
-    }
 }

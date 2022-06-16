@@ -38,6 +38,7 @@ public class ChooseMapManager : MonoBehaviour
         currentMap = SaveManager.instance.currentMap;
         currentMode = SaveManager.instance.currentMode;
         SaveManager.instance.currentTotalLap = 1;
+        SaveScript.LapNumber = 0;
 
         currentTotalLapText.text = "1";
 
@@ -137,10 +138,27 @@ public class ChooseMapManager : MonoBehaviour
         currentTotalLap += 1;
         if (currentTotalLap > 3) currentTotalLap = 1;
 
-        currentTotalLapText.text = currentTotalLap.ToString();
+        if (currentTotalLap == 1) {
+            currentTotalLapText.text = "1";
+            SaveManager.instance.currentTotalLap = 1;
+            SaveManager.instance.Save();
+        }
+        if (currentTotalLap == 2) {
+            currentTotalLapText.text = "2";
+            SaveManager.instance.currentTotalLap = 2;
+            SaveManager.instance.Save();
+        }
+        if (currentTotalLap == 3) {
+            currentTotalLapText.text = "3";
+            SaveManager.instance.currentTotalLap = 3;
+            SaveManager.instance.Save();
+        }
 
-        SaveManager.instance.currentTotalLap = currentTotalLap;
-        SaveManager.instance.Save();
+
+
+
+
+        
     }
 
     public void ChangeMode() {
