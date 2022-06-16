@@ -64,6 +64,7 @@ public class FinishBoard : MonoBehaviour
         }
         else if(SaveManager.instance.currentMode == 2) {
             Text1.text = "Your Score";
+            Text2.text = SaveManager.instance.CurrentScore.ToString();
             SaveManager.instance.totalMoney += 100;
         }
     }

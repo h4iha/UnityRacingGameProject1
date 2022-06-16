@@ -6167,14 +6167,15 @@ MonoBehaviour:
   currentMode: 0
   currentTotalLap: 0
   mapsUnlocked: 0100
+  RaceMin: 0
+  RaceSec: 0
+  CurrentScore: 0
   BestMinM1: 59
   BestSecM1: 59
-  RaceMinM1: 59
-  RaceSecM1: 59
+  BestScoreM1: 0
   BestMinM2: 59
   BestSecM2: 59
-  RaceMinM2: 59
-  RaceSecM2: 59
+  BestScoreM2: 0
 --- !u!1 &1616783694
 GameObject:
   m_ObjectHideFlags: 0

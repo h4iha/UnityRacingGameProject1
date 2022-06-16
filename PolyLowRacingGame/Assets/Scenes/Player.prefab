@@ -11179,6 +11179,7 @@ GameObject:
   - component: {fileID: 4111245826582129107}
   - component: {fileID: 4111245826582129117}
   - component: {fileID: 3661746809218980894}
+  - component: {fileID: 42003129014733263}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -11339,6 +11340,20 @@ MonoBehaviour:
   ChevroletBlue: {fileID: 46861005145203891}
   ChevroletBlack: {fileID: 46861003718903599}
   ChevroletOrange: {fileID: 46861005150228312}
+--- !u!114 &42003129014733263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111245826570869839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013f8e02e54eb4744af93d0173b6871c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentScore: {fileID: 0}
+  BestScore: {fileID: 0}
 --- !u!1 &4111245826570869851
 GameObject:
   m_ObjectHideFlags: 0

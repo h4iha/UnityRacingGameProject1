@@ -9,11 +9,18 @@ public class Lap : MonoBehaviour
     public GameObject AI;
     AudioSource[] audioSources;
 
-    public GameObject FinishBoard;
+    public GameObject ScoringObject;
 
+    public GameObject FinishBoard;
+    public GameObject HalfTriggerObject;
+    public GameObject FinishTriggerObject;
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Player")) {
+
+            HalfTriggerObject.gameObject.SetActive(true);
+            FinishTriggerObject.gameObject.SetActive(false);
+
             SaveScript.LapNumber++;
             SaveScript.LapChange = true;
             if(SaveScript.LapNumber == 2) {
@@ -97,27 +104,11 @@ public class Lap : MonoBehaviour
     }
  
     void Start() {
-        FinishBoard.SetActive(false);
+        
     }
 
     void Update()
     {
-        #region Time Set
-        if(SaveScript.LapChange == true) {
-            SaveScript.LapChange = false;
-            SaveScript.LapTimeMinutes = 0f;
-            SaveScript.LapTimeSeconds = 0f;
-        }
-
-        if(SaveScript.LapNumber >= 1) {
-            SaveScript.LapTimeSeconds = SaveScript.LapTimeSeconds + 1 * Time.deltaTime;
-        }
-        if(SaveScript.LapTimeSeconds > 59) {
-            SaveScript.LapTimeSeconds = 0f;
-            SaveScript.LapTimeMinutes++;
-        }
-        #endregion
-
         
     }
 

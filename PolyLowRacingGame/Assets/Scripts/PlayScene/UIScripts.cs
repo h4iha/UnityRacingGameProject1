@@ -25,6 +25,10 @@ public class UIScripts : MonoBehaviour
     public GameObject TimeModeObject;
     public GameObject RaceModeObject;
 
+    public GameObject Player;
+    public GameObject AI;
+    public GameObject ScoringObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +37,39 @@ public class UIScripts : MonoBehaviour
         currentLapText.text = "0";
         TotalLapText.text = "/ " + SaveManager.instance.currentTotalLap.ToString();
         CurrentTimeText.text = "00: 00";
+
+        FinishBoard.SetActive(false);
+        Player.GetComponent<Scoring>().enabled = false;
+        ScoringObject.gameObject.SetActive(false);
+        SaveManager.instance.CurrentScore = 0;
+        SaveManager.instance.Save();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(SaveManager.instance.currentMode == 2) {
+            Player.GetComponent<Scoring>().enabled = true;
+            ScoringObject.gameObject.SetActive(true);
+        }
+        #region Time Set
+        if(SaveScript.LapChange == true) {
+            SaveScript.LapChange = false;
+            SaveScript.LapTimeMinutes = 0f;
+            SaveScript.LapTimeSeconds = 0f;
+        }
+
+        if(SaveScript.LapNumber >= 1) {
+            SaveScript.LapTimeSeconds = SaveScript.LapTimeSeconds + 1 * Time.deltaTime;
+        }
+        if(SaveScript.LapTimeSeconds > 59) {
+            SaveScript.LapTimeSeconds = 0f;
+            SaveScript.LapTimeMinutes++;
+        }
+        #endregion
+
+
         if(SaveManager.instance.currentMode == 0) {
             ScoreModeObject.gameObject.SetActive(false);
             TimeModeObject.gameObject.SetActive(false);

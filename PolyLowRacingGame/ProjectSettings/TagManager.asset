@@ -8,6 +8,9 @@ TagManager:
   - AI
   - CarBody
   - PosCar
+  - RedScore
+  - BlueScore
+  - YellowScore
   layers:
   - Default
   - TransparentFX

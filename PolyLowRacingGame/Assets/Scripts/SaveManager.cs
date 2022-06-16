@@ -22,13 +22,16 @@ public class SaveManager : MonoBehaviour
 
     public float RaceMin;
     public float RaceSec;
+    public float CurrentScore;
     //Map 1
     public float BestMinM1;
     public float BestSecM1;
+    public float BestScoreM1;
 
     //Map 2
     public float BestMinM2;
     public float BestSecM2;
+    public float BestScoreM2;
 
     private void Awake()
     {
@@ -61,13 +64,16 @@ public class SaveManager : MonoBehaviour
 
             RaceMin = data.RaceMin;
             RaceSec = data.RaceSec;
+            CurrentScore = data.CurrentScore;
             //Best Time Map 1
             BestMinM1 = data.BestMinM1;
             BestSecM1 = data.BestSecM1;
+            BestScoreM1 = data.BestScoreM1;
 
             //Best Time Map 2
             BestMinM2 = data.BestMinM2;
             BestSecM2 = data.BestSecM2;
+            BestScoreM2 = data.BestScoreM2;
 
             if (data.carsUnlocked ==  null)
                 carsUnlocked = new bool[3] { true, false, false};
@@ -96,13 +102,16 @@ public class SaveManager : MonoBehaviour
 
         data.RaceMin = RaceMin;
         data.RaceSec = RaceSec;
+        data.CurrentScore = CurrentScore;
         //Best Time Map 1
         data.BestMinM1 = BestMinM1;
         data.BestSecM1 = BestSecM1;
+        data.BestScoreM1 = BestScoreM1;
 
         //Best Time Map 2
         data.BestMinM2 = BestMinM2;
         data.BestSecM2 = BestSecM2;
+        data.BestScoreM2 = BestScoreM2;
 
         bf.Serialize(file, data);
         file.Close();
@@ -125,12 +134,15 @@ class PlayerData_Storage
 
     public float RaceMin;
     public float RaceSec;
+    public float CurrentScore;
     //Map 1
     public float BestMinM1;
     public float BestSecM1;
+    public float BestScoreM1;
 
     //Map 2
     public float BestMinM2;
     public float BestSecM2;
+    public float BestScoreM2;
 
 }

@@ -18,12 +18,6 @@ public class SaveScript : MonoBehaviour
     public static float LapTimeMinutes;
     public static float LapTimeSeconds;
 
-    public static float BestTimeMinutes;
-    public static float BestTimeSeconds;
-
-    public static float LastTimeMinutes;
-    public static float LastTimeSeconds;
-
     void Start()
     {
         

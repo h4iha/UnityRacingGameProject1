@@ -26,6 +26,6 @@ public class PauseScript : MonoBehaviour
     }
 
     public void mainmenu() {
-        SceneManager.LoadScene("MainmenuScene");
+        SceneManager.LoadScene("ChooseMapScene");
     }
 }
