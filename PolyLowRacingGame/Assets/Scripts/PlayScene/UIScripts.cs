@@ -86,9 +86,10 @@ public class UIScripts : MonoBehaviour
             RaceModeObject.gameObject.SetActive(false);
         }
 
-        DisplaySpeed = SaveScript.CurrentSpeed/SaveScript.MaximumSpeed;
+        //DisplaySpeed = SaveScript.CurrentSpeed/SaveScript.MaximumSpeed;
+        DisplaySpeed =  (Mathf.Round(Player.GetComponent<Rigidbody>().velocity.magnitude*3.6f))/Player.GetComponent<CarController>().m_Topspeed;
         SpeedRing.fillAmount = DisplaySpeed;
-        SpeedText.text = (Mathf.Round(SaveScript.CurrentSpeed).ToString());
+        SpeedText.text = (Mathf.Round(Player.GetComponent<Rigidbody>().velocity.magnitude*3.6f).ToString());
 
         currentLapText.text = SaveScript.LapNumber.ToString();
 

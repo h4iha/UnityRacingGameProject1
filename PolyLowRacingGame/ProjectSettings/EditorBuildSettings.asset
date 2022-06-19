@@ -6,21 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
     path: Assets/Scenes/AboutScene.unity
     guid: b80c774522094a140a39f24334d85d03
   - enabled: 1
     path: Assets/Scenes/ChooseCarScene.unity
     guid: 25e680445dc780847bfa261177affa90
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/ChooseMapScene.unity
+    guid: 4932d561ecfc1624b8c3fd0723922c56
   - enabled: 1
     path: Assets/Scenes/Map1.unity
     guid: a3ce3cb795484bb4fb0c27f52fac4565
   - enabled: 1
     path: Assets/Scenes/Map2.unity
     guid: 1761a52a9eea1a747808afe9f9a3b6ec
-  - enabled: 1
-    path: Assets/Scenes/ChooseMapScene.unity
-    guid: 4932d561ecfc1624b8c3fd0723922c56
   m_configObjects: {}

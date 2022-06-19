@@ -51,7 +51,6 @@ namespace UnityStandardAssets.Vehicles.Car
         public float BrakeInput { get; private set; }
         public float CurrentSteerAngle{ get { return m_SteerAngle; }}
         public float CurrentSpeed{ get { return m_Rigidbody.velocity.magnitude*2.23693629f; }}
-        public float CurrentSpeedKPH{ get { return m_Rigidbody.velocity.magnitude*3.6f; }}
         public float MaxSpeed{get { return m_Topspeed; }}
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
@@ -71,13 +70,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
             m_Rigidbody = GetComponent<Rigidbody>();
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl*m_FullTorqueOverAllWheels);
-            SaveScript.MaximumSpeed = m_Topspeed;
         }
-
-        public void Update() {
-            SaveScript.CurrentSpeed = CurrentSpeedKPH;
-        }
-
+        
         private void GearChanging()
         {
             float f = Mathf.Abs(CurrentSpeed/MaxSpeed);
